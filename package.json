@@ -42,6 +42,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "multi-geocoder": "^0.1.6",
     "normalize.css": "^8.0.1"
   }
 }
