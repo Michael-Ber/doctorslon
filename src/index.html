@@ -15,15 +15,28 @@
     <div class="wrapper">
         <h1 class="title">Тарифы</h1>
         <div class="search__wrapper">
-            <input type="text" id="search" placeholder="Найти"> 
+            <input type="text" id="search" placeholder="Введите название населенного пункта"> 
             <div class="list-search-wrapper">
                 <ul class="list-search"></ul>
             </div>
             
         </div>
         <ul class="list"></ul>
-        <div class="map" id="map">
+
+        <div class="static-map">
+            <img src="./assets/img/map-img.png" alt="map">
+            <span>Посмотреть на карте</span>
         </div>
+        <div class="overlay">
+            <div class="overlay__wrapper">
+                <div class="overlay__close">&#x2715;</div>
+                <div class="map" id="map">
+                </div>
+            </div>
+            
+            
+        </div>
+        
     </div>
     <script src="./script.js"></script>
 </body>

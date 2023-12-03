@@ -11,6 +11,9 @@ window.addEventListener('DOMContentLoaded', () => {
         const listSearchWrapper = document.querySelector('.list-search-wrapper');
         const listSearch = document.querySelector('.list-search');
         const search = document.querySelector('#search');
+        const mapTrigger = document.querySelector('.static-map');
+        const overlay = document.querySelector('.overlay');
+        const closeMap = document.querySelector('.overlay__close');
 
         //Сортировка маасива объектов по первой букве
         respJSON.features.sort((a, b) => (a.name[0].toLowerCase() > b.name[0].toLowerCase() ? 1: -1)).forEach(item => {
@@ -30,6 +33,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 console.log(e.target)
                 if(!e.target.classList.contains('list-search') && e.target.id !== 'search' && e.target.tagName !== 'LI') {
                     listSearchWrapper.style.display = 'none';
+                }
+                if(e.target.classList.contains('overlay_active') || e.target.tagName === 'A') {
+                    overlay.classList.remove('overlay_active');
                 }
             })
         }
@@ -66,36 +72,43 @@ window.addEventListener('DOMContentLoaded', () => {
             
         })
 
-        //создание yandex карты
 
-        async function init() {
-            let map = new ymaps.Map('map', {
-                center: [55.6233267145899,38.86243310321032],
-                zoom: 10,
-                // controls: ['searchControl']
-            }),
-            objectManager = new ymaps.ObjectManager({
-                clusterize: true,
-                gridSize: 32,
-                clusterDisableClickZoom: true
-            });
+        //создание yandex карты и открытие, закрытие popup'a с картой
         
-            objectManager.objects.options.set('preset', 'islands#blueDotIcon');
-            map.geoObjects.add(objectManager);
-            objectManager.add(respJSON.features);
-
-            map.controls.remove('geolocationControl');
-            map.controls.remove(['searchControl']);
-            map.controls.remove('trafficControl');
-            map.controls.remove('typeSelector');
-            map.controls.remove('fullscreenControl');
-            map.controls.remove('zoomControl');
-            map.controls.remove('rulerControl');
-            map.controls.remove(['scrollZoom']);
+        mapTrigger.addEventListener('click', () => {
+            overlay.classList.add('overlay_active');
+            function init() {
+                let map = new ymaps.Map('map', {
+                    center: [55.6233267145899,38.86243310321032],
+                    zoom: 10,
+                }),
+                objectManager = new ymaps.ObjectManager();
             
-        }
+                objectManager.objects.options.set('preset', 'islands#blueDotIcon');
+                objectManager.add(respJSON.features);
+                map.geoObjects.add(objectManager);
+    
+                map.controls.remove('geolocationControl');
+                map.controls.remove(['searchControl']);
+                map.controls.remove('trafficControl');
+                map.controls.remove('typeSelector');
+                map.controls.remove('fullscreenControl');
+                map.controls.remove('zoomControl');
+                map.controls.remove('rulerControl');
+                map.controls.remove(['scrollZoom']);
+                
+            }
+            
+            ymaps.ready(init);
+        })
+
+        closeMap.addEventListener('click', () => {
+            overlay.classList.remove('overlay_active');
+        })
+
         
-        ymaps.ready(init);
+
+        
     
     })()
 })
