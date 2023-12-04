@@ -30,7 +30,6 @@ window.addEventListener('DOMContentLoaded', () => {
             })
 
             window.addEventListener('click', (e) => {
-                console.log(e.target)
                 if (!e.target.classList.contains('list-search') && e.target.id !== 'search' && e.target.tagName !== 'LI') {
                     listSearchWrapper.style.display = 'none';
                 }
@@ -98,7 +97,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 map.controls.remove(['scrollZoom']);
 
             }
-
             ymaps.ready(init);
         })
 
