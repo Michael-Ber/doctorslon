@@ -8,7 +8,7 @@
 }
 
 .wrapper {
-    max-width: 1000px;
+    max-width: 1250px;
     width: 100%;
     margin: 100px auto;
     padding: 0 10px;
@@ -138,7 +138,7 @@ li:nth-child(n):not(:first-child) {
     &__wrapper {
         @include adaptiv-size('width', 1920, 300);
         position: relative;
-        max-width: 1000px;
+        max-width: 1250px;
     }
 
     &__close {

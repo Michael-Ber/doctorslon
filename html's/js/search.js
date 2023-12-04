@@ -26,7 +26,7 @@
   __webpack_require__.r(__webpack_exports__);
   window.addEventListener('DOMContentLoaded', () => {
     (async function () {
-      const resp = await fetch("file:///Y:/work/projects/doctorslon/html's/js/towns.json");
+      const resp = await fetch("./towns.json");
       const respJSON = await resp.json();
       const listSearchWrapper = document.querySelector('.list-search-wrapper');
       const listSearch = document.querySelector('.list-search');
