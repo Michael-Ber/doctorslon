@@ -50,7 +50,7 @@ li:nth-child(n):not(:first-child) {
 }
 
 .list-search li a {
-    color :#000;
+    color: #000;
     font-size: 18px;
     text-decoration: none;
 }
@@ -72,6 +72,7 @@ li:nth-child(n):not(:first-child) {
         width: 300px;
         height: 250px;
     }
+
     span {
         position: absolute;
         top: 50%;
@@ -80,6 +81,7 @@ li:nth-child(n):not(:first-child) {
         opacity: 0;
         z-index: 10;
     }
+
     &::after {
         content: '';
         position: absolute;
@@ -91,16 +93,18 @@ li:nth-child(n):not(:first-child) {
         transition: .3s all ease;
         z-index: 5;
     }
+
     &:hover {
         span {
             opacity: 1;
-        
+
         }
+
         &::after {
             background-color: rgba(#000, .8);
         }
     }
-    
+
     img {
         width: 100%;
         height: 100%;
@@ -148,33 +152,84 @@ li:nth-child(n):not(:first-child) {
     height: 600px;
     border-radius: 20px;
     overflow: hidden;
+
+
+
+    @media(min-width: 992px) {
+        iframe {
+            &:nth-child(1) {
+                display: block;
+            }
+
+            &:nth-child(n+2) {
+                display: none;
+            }
+        }
+    }
+
     @media(max-width: 991px) {
         width: 660px;
         height: 600px;
+
+        iframe {
+            &:nth-child(1) {
+                display: none;
+            }
+
+            &:nth-child(2) {
+                display: block;
+            }
+        }
     }
+
     @media(max-width: 767px) {
         width: 490px;
         height: 500px;
+
+        iframe {
+            &:nth-child(2) {
+                display: none;
+            }
+
+            &:nth-child(3) {
+                display: block;
+            }
+        }
     }
+
     @media(max-width: 575px) {
         width: 220px;
         height: 400px;
+
+        iframe {
+            &:nth-child(3) {
+                display: none;
+            }
+
+            &:nth-child(4) {
+                display: block;
+            }
+        }
     }
 }
 
-[class*="gotoymaps__container"], [class*="-copyright"], [class*="-controls__control_toolbar"] {
+[class*="gotoymaps__container"],
+[class*="-copyright"],
+[class*="-controls__control_toolbar"] {
     display: none !important;
 }
 
 input {
     width: 100%;
-    height: 50px;   
+    height: 50px;
     font-size: 22px;
     padding: 0 20px;
     outline: none;
+
     @media(max-width: 767px) {
         font-size: 18px;
     }
+
     @media(max-width: 575px) {
         font-size: 15px;
         padding: 10px;

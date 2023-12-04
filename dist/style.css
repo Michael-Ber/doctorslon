@@ -119,20 +119,39 @@ li:nth-child(n):not(:first-child) {
   height: 600px;
   border-radius: 20px;
   overflow: hidden; }
+  @media (min-width: 992px) {
+    .map iframe:nth-child(1) {
+      display: block; }
+    .map iframe:nth-child(n+2) {
+      display: none; } }
   @media (max-width: 991px) {
     .map {
       width: 660px;
-      height: 600px; } }
+      height: 600px; }
+      .map iframe:nth-child(1) {
+        display: none; }
+      .map iframe:nth-child(2) {
+        display: block; } }
   @media (max-width: 767px) {
     .map {
       width: 490px;
-      height: 500px; } }
+      height: 500px; }
+      .map iframe:nth-child(2) {
+        display: none; }
+      .map iframe:nth-child(3) {
+        display: block; } }
   @media (max-width: 575px) {
     .map {
       width: 220px;
-      height: 400px; } }
+      height: 400px; }
+      .map iframe:nth-child(3) {
+        display: none; }
+      .map iframe:nth-child(4) {
+        display: block; } }
 
-[class*="gotoymaps__container"], [class*="-copyright"], [class*="-controls__control_toolbar"] {
+[class*="gotoymaps__container"],
+[class*="-copyright"],
+[class*="-controls__control_toolbar"] {
   display: none !important; }
 
 input {

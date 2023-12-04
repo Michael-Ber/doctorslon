@@ -82,29 +82,10 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    //создание yandex карты и открытие, закрытие popup'a с картой
+    //открытие, закрытие popup'a с картой
 
     mapTrigger.addEventListener('click', () => {
       overlay.classList.add('overlay_active');
-      function init() {
-        let map = new ymaps.Map('map', {
-            center: [55.6233267145899, 38.86243310321032],
-            zoom: 10
-          }),
-          objectManager = new ymaps.ObjectManager();
-        objectManager.objects.options.set('preset', 'islands#blueDotIcon');
-        objectManager.add(respJSON.features);
-        map.geoObjects.add(objectManager);
-        map.controls.remove('geolocationControl');
-        map.controls.remove(['searchControl']);
-        map.controls.remove('trafficControl');
-        map.controls.remove('typeSelector');
-        map.controls.remove('fullscreenControl');
-        map.controls.remove('zoomControl');
-        map.controls.remove('rulerControl');
-        map.controls.remove(['scrollZoom']);
-      }
-      ymaps.ready(init);
     });
     closeMap.addEventListener('click', () => {
       overlay.classList.remove('overlay_active');

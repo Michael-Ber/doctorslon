@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,21 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
     </script>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=47aa74ff-1f21-488c-a621-f2ac8ece7466&lang=ru_RU" type="text/javascript">
-    </script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=47aa74ff-1f21-488c-a621-f2ac8ece7466&lang=ru_RU"
+        type="text/javascript">
+        </script>
 </head>
+
 <body>
 
     <div class="wrapper">
         <h1 class="title">Тарифы</h1>
         <div class="search__wrapper">
-            <input type="text" id="search" placeholder="Введите название населенного пункта"> 
+            <input type="text" id="search" placeholder="Введите название населенного пункта">
             <div class="list-search-wrapper">
                 <ul class="list-search"></ul>
             </div>
-            
+
         </div>
         <ul class="list"></ul>
 
@@ -31,13 +34,26 @@
             <div class="overlay__wrapper">
                 <div class="overlay__close">&#x2715;</div>
                 <div class="map" id="map">
+                    <iframe
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A43f2bc061a961250f50b8f3336bec7b2bc2f1aff54208154d141085b1e563c25&amp;source=constructor"
+                        width="900" height="600" frameborder="0" loading="lazy"></iframe>
+                    <iframe
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A43f2bc061a961250f50b8f3336bec7b2bc2f1aff54208154d141085b1e563c25&amp;source=constructor"
+                        width="660" height="600" frameborder="0" loading="lazy"></iframe>
+                    <iframe
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A43f2bc061a961250f50b8f3336bec7b2bc2f1aff54208154d141085b1e563c25&amp;source=constructor"
+                        width="490" height="500" frameborder="0" loading="lazy"></iframe>
+                    <iframe
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A43f2bc061a961250f50b8f3336bec7b2bc2f1aff54208154d141085b1e563c25&amp;source=constructor"
+                        width="320" height="400" frameborder="0" loading="lazy"></iframe>
                 </div>
             </div>
-            
-            
+
+
         </div>
-        
+
     </div>
     <script src="./script.js"></script>
 </body>
+
 </html>
