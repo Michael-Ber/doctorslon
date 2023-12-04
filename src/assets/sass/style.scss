@@ -1,3 +1,6 @@
+@import './var/variables';
+@import './var/mixins';
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -50,7 +53,7 @@ li:nth-child(n):not(:first-child) {
 }
 
 .list-search li a {
-    color :#000;
+    color: #000;
     font-size: 18px;
     text-decoration: none;
 }
@@ -72,6 +75,7 @@ li:nth-child(n):not(:first-child) {
         width: 300px;
         height: 250px;
     }
+
     span {
         position: absolute;
         top: 50%;
@@ -80,6 +84,7 @@ li:nth-child(n):not(:first-child) {
         opacity: 0;
         z-index: 10;
     }
+
     &::after {
         content: '';
         position: absolute;
@@ -91,16 +96,18 @@ li:nth-child(n):not(:first-child) {
         transition: .3s all ease;
         z-index: 5;
     }
+
     &:hover {
         span {
             opacity: 1;
-        
+
         }
+
         &::after {
             background-color: rgba(#000, .8);
         }
     }
-    
+
     img {
         width: 100%;
         height: 100%;
@@ -122,59 +129,57 @@ li:nth-child(n):not(:first-child) {
     align-items: center;
     z-index: 20;
 
+    &_active {
+        opacity: 1;
+        visibility: visible;
+        background-color: rgba(#000, .7);
+    }
+
     &__wrapper {
+        @include adaptiv-size('width', 1920, 300);
         position: relative;
+        max-width: 1000px;
     }
 
     &__close {
         position: absolute;
-        top: 0;
-        right: -40px;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
         color: #fff;
         z-index: 20;
         font-size: 32px;
         cursor: pointer;
     }
 
-    &_active {
-        opacity: 1;
-        visibility: visible;
-        background-color: rgba(#000, .7);
-    }
+
 }
 
 .map {
-    width: 900px;
-    height: 600px;
+    width: 100%;
+    height: 300px;
     border-radius: 20px;
     overflow: hidden;
-    @media(max-width: 991px) {
-        width: 660px;
-        height: 600px;
-    }
-    @media(max-width: 767px) {
-        width: 490px;
-        height: 500px;
-    }
-    @media(max-width: 575px) {
-        width: 220px;
-        height: 400px;
-    }
+    margin: 0 auto;
 }
 
-[class*="gotoymaps__container"], [class*="-copyright"], [class*="-controls__control_toolbar"] {
+[class*="gotoymaps__container"],
+[class*="-copyright"],
+[class*="-controls__control_toolbar"] {
     display: none !important;
 }
 
 input {
     width: 100%;
-    height: 50px;   
+    height: 50px;
     font-size: 22px;
     padding: 0 20px;
     outline: none;
+
     @media(max-width: 767px) {
         font-size: 18px;
     }
+
     @media(max-width: 575px) {
         font-size: 15px;
         padding: 10px;

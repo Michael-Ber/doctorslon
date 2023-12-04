@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', () => {
       function init() {
         let map = new ymaps.Map('map', {
             center: [55.6233267145899, 38.86243310321032],
-            zoom: 10
+            zoom: 9
           }),
           objectManager = new ymaps.ObjectManager();
         objectManager.objects.options.set('preset', 'islands#blueDotIcon');
