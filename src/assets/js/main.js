@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             respJSON.features.filter(item => {
                 for (let i = 0; i < e.target.value.length; i++) {
-                    if (item.name.toLowerCase().includes(e.target.value) && item.name.indexOf(e.target.value) <= e.target.value.length) {
+                    if (item.name.toLowerCase().includes(e.target.value.toLowerCase()) && item.name.indexOf(e.target.value.toLowerCase()) <= e.target.value.length) {
                         return item
                     } else {
                         return null
