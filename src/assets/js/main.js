@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
             function init() {
                 let map = new ymaps.Map('map', {
                     center: [55.6233267145899, 38.86243310321032],
-                    zoom: 9,
+                    zoom: 10,
                 }),
                     objectManager = new ymaps.ObjectManager();
 

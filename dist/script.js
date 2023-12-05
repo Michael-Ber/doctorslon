@@ -88,7 +88,7 @@ window.addEventListener('DOMContentLoaded', () => {
       function init() {
         let map = new ymaps.Map('map', {
             center: [55.6233267145899, 38.86243310321032],
-            zoom: 9
+            zoom: 10
           }),
           objectManager = new ymaps.ObjectManager();
         objectManager.objects.options.set('preset', 'islands#blueDotIcon');
@@ -103,7 +103,6 @@ window.addEventListener('DOMContentLoaded', () => {
         map.controls.remove('rulerControl');
         map.controls.remove(['scrollZoom']);
       }
-      console.log(ymaps);
       ymaps.ready(init);
     });
     closeMap.addEventListener('click', () => {
